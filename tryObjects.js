@@ -19,8 +19,19 @@ var person = {
     lastName: "Doe",
     age: 50,
     eyeColor: "blue",
-    fullname: function(){return this.lastName+this.firstName }
+    fullname: function(){return this.lastName+this.firstName }}
+
+    // var country1 = {"India": ["ÄP","TN","Delhi"], "America":["NA","Mexico"] };
+    // var country2  = Object.create(country1);
+    // var country3 = country1;
+    // console.log(country3);
+a = person
+a.firstName="dhu"
+a.me="sin"
+console.log(a)
 
 
-};
-console.log(person.fullname());
+
+
+
+//console.log(person.fullname());
