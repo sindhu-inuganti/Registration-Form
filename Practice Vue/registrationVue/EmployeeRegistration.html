@@ -1,0 +1,148 @@
+<html>
+
+<head>
+    <title>Employee Registration</title>
+    <h1>Employee Registration</h1>
+    <link rel="stylesheet" href="myStyle.css">
+
+</head>
+
+<body>
+    <div class="row">
+        <div class="column">
+            <form>
+                <h2>Register Employee</h2>
+                <div class="field"><label>First name:</label></div>
+                <div class="fieldvalue"><input type="text" name="fname" required v-model='fname'></div>
+                <div class="field"><label>Last name:</label><br></div>
+                <div class="fieldvalue"><input type="text" class="lname" name="lname" required v-model='lname'><br>
+                </div>
+
+                <div class="field"><label>Email:</label><br></div>
+                <div class="fieldvalue"><input type="text" class="email" name="email" required v-model='email'><br>
+                </div>
+                <div class="field"><label>Password:</label><br></div>
+                <div class="fieldvalue"><input type="password" class="password" name="password" required><br></div>
+
+                <div class="field"><label>Gender:</label><br></div>
+                <div class="fieldvalue"><label>Male</label>
+                    <input type="radio" value="male" name="gender" v-model='gender'>
+                    <label for="gender">Female</label>
+                    <input type="radio" value="female" name="gender" v-model='gender'><br></div>
+
+                <div class="field"><label for="dob">Date of Birth:</label><br></div>
+                <div class="fieldvalue"><input type="date" name="dob" required v-model='dob'></div>
+
+
+                <div class="field"><label name="hobbies">Hobbies:</label><br></div>
+                <div class="fieldvalue">
+                    <input type="checkbox" name="hobbies" value="music" v-model='hobbies'>Listening to music<br>
+                    <input type="checkbox" name="hobbies" value="painting" v-model='hobbies'>Painting<br>
+                    <input type="checkbox" name="hobbies" value="dancing" v-model='hobbies'>Dancing<br>
+                    <input type="checkbox" name="hobbies" value="reading" v-model='hobbies'>Reading books<br>
+                    <input type="checkbox" name="hobbies" value="writing" v-model='hobbies'>Writing stories<br>
+
+                </div>
+
+                <div class="field"><label name="country">Country:</label></div>
+                <div class="fieldvalue">
+                    <select id="country" onchange="selectstate()" name="country" v-model='country'>
+                        <option value="selectcountry">select country</option>
+                        <option value="India">India</option>
+                        <option value="Australia">Australia</option>
+                        <option value="America">America</option>
+                        <option value="New Zealand">New Zealand</option>
+                    </select></div>
+
+                <div class="field"><label name="state">State:</label></div>
+                <div class="fieldvalue">
+                    <select id="state" name="state" v-model='state'>
+                        <option value="selectstate">select state</option>
+                    </select></div>
+
+                <div class="field"><label name="address">Address:</label></div>
+                <div class="fieldvalue">
+                    <textarea name="address" v-model='address'></textarea></div>
+
+                <div class="field" align="right">
+                    <button id="reset" onclick="resetform()">Reset</button>
+                    <button type="submit" id="submit">Submit</button>
+                </div>
+
+            </form>
+        </div>
+        <div class="column">
+
+
+            <h2>Preview</h2>
+            <div class="field">First Name:</div>
+            <div class="fieldvalue">.{{fname}}</div>
+            <div class="field">Last Name:</div>
+            <div class="fieldvalue">.{{lname}}</div>
+            <div class="field">full Name:</div>
+            <div class="fieldvalue">.{{fullName()}}</div>
+            <div class="field">Email:</div>
+            <div class="fieldvalue">.{{email}}</div>
+            <div class="field">Gender:</div>
+            <div class="fieldvalue">.{{gender}}</div>
+            <div class="field">Date of Birth:</div>
+            <div class="fieldvalue">.{{dob}}</div>
+            <div class="field">Hobbies:</div>
+            <div class="fieldvalue">
+                <ul>
+                    <li v-for='hobby in hobbies' :key="hobby.hobbies">
+                        {{hobby}}
+                    </li>
+                </ul>
+            </div>
+            <div class="field">Country:</div>
+            <div class="fieldvalue">.{{country}}</div>
+            <div class="field">State:</div>
+            <div class="fieldvalue">.{{state}}</div>
+            <div class="field">Address:</div>
+            <div class="fieldvalue">.{{address}}</div>
+
+
+        </div>
+
+    </div>
+
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<script>
+    var app = new Vue({
+        el: ".row",
+        props: { email: String, gender: String, dob: Date, country: String, state: String, address: String },
+        data:
+        {
+            fname: '', lname: '',
+            headingvar: "Welcome",
+            hobbies: []
+
+        },
+
+        methods: {
+
+            fullName() { return this.fname + "" + this.lname; }
+
+
+        }
+    })
+    const selectstate = () => {
+
+        var country = document.getElementById("country").value;
+        country_state = { "selectcountry": ["selectstate"], "India": ["Andhra Pradesh", "Telangana", "Tamil Nadu", "Karnataka"], "Australia": ["New South Wales (NSW)", "Queensland (Qld)", "South Australia (SA)", "Tasmania (Tas)", "Victoria (Vic)", "Western Australia (WA)"], "New Zealand": ['Northland', 'Auckland', 'Waikato', 'Bay of Plenty', 'Gisborne', 'Hawke Bay', 'Taranaki', 'Manawatu-Whanganui'], 'America': ['California', 'Florida', 'Texas', 'New Jersey'] }
+        state = "";
+        states = country_state[country]
+        for (i = 0; i < states.length; i++) {
+            state += "<option>" + states[i] + "</option>";
+        }
+        document.getElementById("state").innerHTML = state;
+
+    }
+
+</script>
+
+</html>

@@ -1,0 +1,29 @@
+<html>
+    <head>
+
+        <title>First Vue</title>
+    </head>
+    <body>
+        <div class='app'>
+            <div class="sampleimg">
+                <img v-bind:src=image>
+            </div>
+            <div class="imginfo">
+                <h2>{{headingvar}}</h2>
+                <a href="https://paultonspark.co.uk/">Visit the world of Pink Pigs</a>
+                <p>Want to know about pigs?</p>
+                <input type="radio" name="piginfo">
+                <label>Hell Yeah!!!</label><br>
+                <input type="radio" name="piginfo">
+                <label>I already know enough about pigs</label><br>
+
+                <p v-if="radioFunc()">Pigs are cute</p>
+                <p v-else>Pink pigs are cute</p>
+            </div>
+            </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src=samplevue.js></script>
+    </body>
+   
+</html>

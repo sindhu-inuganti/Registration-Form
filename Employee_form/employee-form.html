@@ -1,63 +1,70 @@
 <html>
 <link rel="stylesheet" href="myStyle.css">
-
+<!-- <div class='nav-bar'></div> -->
 <head>
     <title>
         EMPLOYEE FORM
     </title>
 </head>
 
-<body>
 
-    <body>
+
+    <body onload="loadDoc()">
         <div>
-            <h1>
+            <h1 id="demo">
                 Register Employee
             </h1>
-            <form>
+            <!-- <div class='nav-bar'></div> -->
+
+            <form >
                 <div class="container">
-                    <div class="field"><label for="fname">First name:</label></div>
+                    <div class="field"><label >First name:</label></div>
                     <div class="fieldvalue"><input type="text" class="fname" name="fname"></div>
-                    <div class="field"><label for="lname">Last name:</label><br></div>
+                    <div class="field"><label >Last name:</label><br></div>
                     <div class="fieldvalue"><input type="text" class="lname" name="lname"><br></div>
 
-                    <div class="field"><label for="email">Email:</label><br></div>
+                    <div class="field"><label>Email:</label><br></div>
                     <div class="fieldvalue"><input type="text" class="email" name="email"><br></div>
-                    <div class="field"><label for="password">Password:</label><br></div>
+                    <div class="field"><label>Password:</label><br></div>
                     <div class="fieldvalue"><input type="password" class="password" name="password"><br></div>
 
-                    <div class="field"><label for="gender">Gender:</label><br></div>
-                    <div class="fieldvalue"><label for="gender">Male</label>
+                    <div class="field"><label>Gender:</label><br></div>
+                    <div class="fieldvalue"><label>Male</label>
                         <input type="radio" value="male" name="gender">
                         <label for="gender">Female</label>
                         <input type="radio" value="female" name="gender"><br></div>
+                        
+                        <div class="field"><label for="dob">Date of Birth:</label><br></div>
+                        <div class="fieldvalue"><input type="date" name="dob"></div>   
 
-                    <div class="field"><label for="hobbies">Hobbies:</label><br></div>
+
+                    <div class="field"><label name="hobbies">Hobbies:</label><br></div>
                     <div class="fieldvalue">
-                        <input type="checkbox" class="hobby1" name="hobby1" value="music">Listening to music<br>
-                        <input type="checkbox" class="hobby2" name="hobby2" value="painting">Painting<br>
-                        <input type="checkbox" class="hobby3" name="hobby3" value="Dancing">Dancing<br>
+                        <input type="checkbox" name="hobbies" value="music">Listening to music<br>
+                        <input type="checkbox" name="hobbies" value="painting">Painting<br>
+                        <input type="checkbox" name="hobbies" value="dancing">Dancing<br>
+                        <input type="checkbox" name="hobbies" value="reading">Reading books<br>
+                        <input type="checkbox" name="hobbies" value="writing">Writing stories<br>
+
                     </div>
 
-                    <div class="field"><label for="country">Country:</label></div>
+                    <div class="field"><label name="country">Country:</label></div>
                     <div class="fieldvalue">
-                        <select id="country">
+                        <select id="country" onchange="selectstate()" name="country">
+                            <option value="selectcountry">select country</option>
                             <option value="India">India</option>
                             <option value="Australia">Australia</option>
                             <option value="America">America</option>
                             <option value="New Zealand">New Zealand</option>
                         </select></div>
 
-                    <div class="field"><label for="state">State:</label></div>
+                    <div class="field"><label name="state">State:</label></div>
                     <div class="fieldvalue">
-                        <select id="state">
-                            <option value="andhra pradesh">Andhra Pradesh</option>
-                            <option value="telangana">Telangana</option>
-                            <option value="kerala">Kerala</option>
-                            <option value="sikkim">Sikkim</option>
+                        <select id="state" name=""sate>
+                            <option value="selectstate">select state</option>
                         </select></div>
 
-                    <div class="field"><label for="address">Address:</label></div>
+                    <div class="field"><label name="address">Address:</label></div>
                     <div class="fieldvalue">
                         <textarea id="address"></textarea></div>
 
@@ -65,12 +72,18 @@
 
                     <div class="field" align="right">
                         <button id="reset" type="reset">Reset</button>
-                        <button type="submit" id="submit">Submit</button>
+                        <button type="submit"  id="submit">Submit</button>
                     </div>
                 </div>
             </form>
         </div>
+        <button onclick="addEmployee()">Register</button>
+
+        <h4>List of Employees</h4>
+       <script src="form_validation.js"></script>
+
+            <table id="myTable"></table>
+            
     </body>
-</body>
 
 </html>

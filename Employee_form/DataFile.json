@@ -1,0 +1,34 @@
+[    {
+    "First Name": "Krishna",
+    "Last Name": "Kollu",
+    "Email": "krishnakollu@gmail.com",
+    "Password": "kkollu",
+    "Gender": "male",
+    "Hobbies": ["reading","music"],    
+    "Country": "Australia",
+    "State": "Sikkim", 
+    "Address" : "Chinna Waltair"    
+    },
+    {
+        "First Name": "Neha",
+        "Last Name": "Duggirala",
+        "Email": "nehaduggirala@gmail.com",
+        "Password": "nduggirala",
+        "Gender": "female",
+        "Hobbies": ["dancing","music"],    
+        "Country": "New Zealand",
+        "State": "Kerala",
+        "Address" : "Pedda Waltair"  
+    },
+    {
+            "First Name": "Haritha",
+            "Last Name": "Vasanthula",
+            "Email": "harithavasantula@gmail.com",
+            "Password": "hvasanthula",
+            "Gender": "female",
+            "Hobbies": ["writing","music"],    
+            "Country": "America",
+            "State": "Telangana"  ,
+            "Address": "Kommadi" 
+    }
+]

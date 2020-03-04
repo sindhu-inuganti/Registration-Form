@@ -14,11 +14,13 @@ var funcVar = function myFunc(a,b)
 // console.log(myFunc(4,5,6))
 
 var data= {x:15,y:15}
-console.log(funcVar.call(data,4,5));//call
+var arr=[3,3]
+console.log(funcVar.call(data,5,6));//call
 
-var arr=[2,3]
 console.log(funcVar.apply(data,arr))//apply
 console.log(funcVar.apply(data,[4,5]))//apply
+
+
 
 
 
