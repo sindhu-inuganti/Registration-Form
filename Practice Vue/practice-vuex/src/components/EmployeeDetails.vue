@@ -11,7 +11,7 @@
         <th>State</th>
         <th>Address</th>
       </tr>
-      <tr v-for="d in $store.state.empList" :key="d.vcountry">
+      <tr v-for="d in $store.state.empList" :key="d.fname">
         <td>{{d.fname+" "+d.lname}}</td>
         <td>{{d.email}}</td>
         <td>{{d.gender}}</td>
@@ -28,6 +28,12 @@
 <script>
 export default {
   name: "EmployeeDetails",
+  // computed: {
+  //   empList () {
+  //     return this.$store.state.empList
+  //   }
+  // },
+
   
 };
 </script>

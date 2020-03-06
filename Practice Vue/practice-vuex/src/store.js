@@ -26,7 +26,7 @@ export default new Vuex.Store({
     {
 
         addEmployee(state, value) {
-            state.empList.push({...value});
+            state.empList.push({ ...value });
         },
         resetForm(state) {
             state.empObj.fname = "";
@@ -47,22 +47,29 @@ export default new Vuex.Store({
                     state.empObj.states = state.empObj.country_states[ind].states;
             }
         }
-        
+
     },
     actions:
     {
 
-        addEmployee({commit},value) {
-            commit('addEmployee',value)
+        addEmployee({ commit }, value) {
+            commit('addEmployee', value)
         },
         resetForm(context) {
             context.commit('resetForm')
         },
         selectState(context) {
             context.commit('selectState')
+        },
+        getData(context) {
+            axios
+                .get('http://localhost:8080/data/MasterData.json')
+                .then(response => (context.state.empList = response.data))
         }
     }
-    
+
 });
+
+import axios from 'axios';
 
 

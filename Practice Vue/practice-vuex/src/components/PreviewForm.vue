@@ -2,8 +2,6 @@
 <template>
   <div>
     <h2>Preview</h2>
-    <div class="field">First Name: {{empObj.fname}}</div>
-    <div class="field">Last Name: {{empObj.lname}}</div>
     <div class="field">Full Name: {{fullName()}}</div>
     <div class="field">Email: {{empObj.email}}</div>
     <div class="field">Gender: {{empObj.gender}}</div>
@@ -23,17 +21,17 @@
 export default {
   name: "PreviewForm",
   computed: {
-    empObj () {
-      return this.$store.state.empObj
+    empObj() {
+      return this.$store.state.empObj;
     },
-    empList () {
-      return this.$store.state.empList
+    empList() {
+      return this.$store.state.empList;
     }
   },
   methods: {
     fullName() {
-            return this.empObj.fname + "  " + this.empObj.lname;
-        }    
+      return this.empObj.fname + "  " + this.empObj.lname;
+    }
   }
 };
 </script>

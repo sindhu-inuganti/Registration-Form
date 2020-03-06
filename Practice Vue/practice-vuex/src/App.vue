@@ -1,7 +1,5 @@
 <template>
   <div>
-    <h2>in app</h2>
-
     <div class="topnav">
       <router-link :to="{ name: 'EmployeeDetails'}">Home</router-link>
       <router-link :to="{ name: 'EmployeeRegistration'}">Register</router-link>
@@ -12,11 +10,14 @@
 </template>
 
 <script>
+// import store from "./store.js"
 export default {
-  name: "App"
-    
-
+  name: "App",
+  mounted(){
+    this.$store.dispatch('getData');
+  }
 };
+
 </script>
 
 <style>

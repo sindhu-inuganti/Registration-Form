@@ -11,6 +11,8 @@
       </div>
     </div>
     <button @click="addEmployeeLocal()">Add Employee</button>
+
+
   </div>
 </template>
 
@@ -20,7 +22,7 @@ import PreviewForm from "./PreviewForm.vue";
 
 export default {
   name: "EmployeeRegistration",
-  components: { RegistrationForm, PreviewForm },
+  components: { RegistrationForm, PreviewForm},
     
   methods: {
     addEmployeeLocal() {
