@@ -24,7 +24,7 @@ export default {
     
   methods: {
     addEmployeeLocal() {
-      this.$store.dispatch("addEmployee");
+      this.$store.dispatch("addEmployee",this.$store.state.empObj);
     }
   }
 };

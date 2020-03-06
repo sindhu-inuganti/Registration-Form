@@ -25,10 +25,8 @@ export default new Vuex.Store({
     mutations:
     {
 
-        addEmployee(state) {
-            let obj = { ...state.empObj };
-
-            state.empList.push(obj);
+        addEmployee(state, value) {
+            state.empList.push({...value});
         },
         resetForm(state) {
             state.empObj.fname = "";
@@ -54,8 +52,8 @@ export default new Vuex.Store({
     actions:
     {
 
-        addEmployee(context) {
-            context.commit('addEmployee')
+        addEmployee({commit},value) {
+            commit('addEmployee',value)
         },
         resetForm(context) {
             context.commit('resetForm')
@@ -66,3 +64,5 @@ export default new Vuex.Store({
     }
     
 });
+
+
